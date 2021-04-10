@@ -32,3 +32,14 @@ const json = '{"x":10,"y":20}';
 
 // parsedJson's return type is any
 const parsedJson = JSON.parse(json);
+
+const parsedJsonWithAnnotation: { x: number; y: number } = JSON.parse(json);
+
+parsedJsonWithAnnotation.tea; // error because it's not a property
+
+let words = ["red", "green", "blue"];
+let foundWord: boolean; // better way is to initialise it as false
+
+words.forEach((e) => {
+  if (e === "green") foundWord = true;
+});
