@@ -43,3 +43,12 @@ let foundWord: boolean; // better way is to initialise it as false
 words.forEach((e) => {
   if (e === "green") foundWord = true;
 });
+
+// variable whose type cannot be inferred correctly
+
+let numbers = [-10, -1, 12];
+let numberAboveZero: boolean | number = false;
+
+numbers.forEach((e) => {
+  if (e > 0) numberAboveZero = e; // numberAboveZero can be a boolean or a number
+});
